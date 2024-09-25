@@ -103,15 +103,16 @@ class CachedFrames
 
     public function loadFrames()
     {
-        sys.thread.Thread.create(() -> {
-            toBeLoaded.set('sign','fourth/mech/Sign_Post_Mechanic');
+        sys.thread.Thread.create(() -> { // brooo n sei oq os devs tava na cabeça mandando o jogo pre carregar todos assets pesados de uma vez 💀🙏
+            
+           /* toBeLoaded.set('sign','fourth/mech/Sign_Post_Mechanic');
             toBeLoaded.set('left','hellclwn/Tricky/Left');
             toBeLoaded.set('right','hellclwn/Tricky/right');
             toBeLoaded.set('up','hellclwn/Tricky/Up');
             toBeLoaded.set('down','hellclwn/Tricky/Down');
             toBeLoaded.set('idle','hellclwn/Tricky/Idle');
             toBeLoaded.set('grem','fourth/mech/HP GREMLIN');
-            toBeLoaded.set('cln','fourth/Clone');
+            toBeLoaded.set('cln','fourth/Clone');*/
             // all the big sprites
             var numba = 0;
             for(i in toBeLoaded.keys())

@@ -86,7 +86,7 @@ class Main extends Sprite
         vHandler.init2();
         GlobalVideo.setVid(vHandler);
         vHandler.source(ourSource);
-        #elseif desktop
+        #else
 		WebmPlayer.SKIP_STEP_LIMIT = 90; //haxelib git extension-webm https://github.com/ThatRozebudDude/extension-webm
         var str1:String = "WEBM SHIT"; 
         var webmHandle = new WebmHandler();
@@ -97,13 +97,9 @@ class Main extends Sprite
         GlobalVideo.setWebm(webmHandle);
         #end 
 
-
-		#if !mobile
 		fpsCounter = new FPS(10, 3, 0xFFFFFF);
 		addChild(fpsCounter);
 		toggleFPS(FlxG.save.data.fps);
-
-		#end
 	}
 
 	var game:FlxGame;
