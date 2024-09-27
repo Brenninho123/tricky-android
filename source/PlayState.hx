@@ -35,7 +35,7 @@ import flixel.util.FlxSort;
 import flixel.util.FlxStringUtil;
 import flixel.util.FlxTimer;
 import haxe.Json;
-
+import hxcodec.VideoHandler;
 using StringTools;
 
 class PlayState extends MusicBeatState
@@ -2234,7 +2234,14 @@ class PlayState extends MusicBeatState
 			{
 				MainMenuState.reRoll = true;
 
-				LoadingState.loadAndSwitchState(new VideoState("assets/videos/TricksterMan.webm",new MainMenuState()));
+			//	LoadingState.loadAndSwitchState(new VideoState("assets/videos/TricksterMan.webm",new MainMenuState()));
+
+				var video:VideoHandler = new VideoHandler();
+				video.playVideo(Paths.video("TricksterMan"));
+				video.finishCallback = function()
+			    {
+				  LoadingState.loadAndSwitchState(new MainMenuState());
+				}
 
 				if (storyDifficulty == 2)
 					FlxG.save.data.beatenHard = true;
@@ -2275,9 +2282,21 @@ class PlayState extends MusicBeatState
 				switch(song.toLowerCase())
 				{
 					case 'improbable-outset':
-						LoadingState.loadAndSwitchState(new VideoState("assets/videos/HankFuckingShootsTricky.webm", new PlayState()));
+						var video:VideoHandler = new VideoHandler();
+			        	video.playVideo(Paths.video("HankFuckingShootsTricky"));
+				        video.finishCallback = function()
+			            {
+				           LoadingState.loadAndSwitchState(new PlayState());
+				        }
+					//	LoadingState.loadAndSwitchState(new VideoState("assets/videos/HankFuckingShootsTricky.webm", new PlayState()));
 					case 'madness':
-						LoadingState.loadAndSwitchState(new VideoState("assets/videos/HELLCLOWN_ENGADGED.webm",new PlayState()));
+						var video:VideoHandler = new VideoHandler();
+			        	video.playVideo(Paths.video("HELLCLOWN_ENGADGED"));
+				        video.finishCallback = function()
+			            {
+				           LoadingState.loadAndSwitchState(new PlayState());
+				        }
+				//		LoadingState.loadAndSwitchState(new VideoState("assets/videos/HELLCLOWN_ENGADGED.webm",new PlayState()));
 					default:
 						LoadingState.loadAndSwitchState(new PlayState());
 				}

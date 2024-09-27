@@ -1,12 +1,6 @@
 {
     "dependencies": [
       {
-        "name": "linc_luajit",
-        "type": "git",
-        "ref": "master",
-        "url": "https://github.com/superpowers04/linc_luajit"
-      },
-      {
         "name": "flixel",
         "type": "haxelib",
         "version": "4.11.0"
