@@ -66,7 +66,6 @@
 	<assets path="assets/clown"    library="clown"    exclude="*.ogg" if="web"/>
 	<assets path="assets/clown"    library="clown"    exclude="*.mp3" unless="web"/>
 
-	<assets path='example_mods' rename='mods' embed='false'/>
 	<assets path='art/readme.txt' rename='do NOT readme.txt' />
 	<!-- <template path='mods' /> -->
 	
