@@ -1,5 +1,5 @@
 package;
-
+#if desktop
 import flixel.FlxG;
 import openfl.display.Sprite;
 import webm.*;
@@ -156,3 +156,4 @@ class WebmHandler
 		webm.visible = true;
 	}
 }
+#end

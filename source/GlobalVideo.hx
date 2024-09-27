@@ -1,5 +1,5 @@
 package;
-
+#if desktop
 import openfl.Lib;
 
 class GlobalVideo
@@ -93,3 +93,4 @@ class GlobalVideo
 		return null;
 	}
 }
+#end
