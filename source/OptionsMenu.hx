@@ -97,6 +97,11 @@ class OptionsMenu extends MusicBeatState
 		menuShade.setGraphicSize(Std.int(menuShade.width * 0.7));
 		add(menuShade);
 
+		#if mobile
+		addVirtualPad(UP_DOWN, A_B_C);
+		virtualPad.y = -24;
+		#end
+
 		super.create();
 	}
 
@@ -154,6 +159,13 @@ class OptionsMenu extends MusicBeatState
 				changeSelection(-1);
 			if (controls.DOWN_P)
 				changeSelection(1);
+
+			#if android
+			if (virtualPad.buttonC.justPressed)
+			{
+				openSubState(new mobile.MobileControlsSubState());
+			}
+			#end
 			
 			if (isCat)
 			{
@@ -161,12 +173,12 @@ class OptionsMenu extends MusicBeatState
 				{
 					if (FlxG.keys.pressed.SHIFT)
 						{
-							if (FlxG.keys.pressed.RIGHT)
+							if (controls.RIGHT_P)
 							{
 								currentSelectedCat.getOptions()[curSelected].right();
 								currentOptions[curSelected].text = currentSelectedCat.getOptions()[curSelected].getDisplay();
 							}
-							if (FlxG.keys.pressed.LEFT)
+							if (controls.LEFT_P)
 							{
 								currentSelectedCat.getOptions()[curSelected].left();
 								currentOptions[curSelected].text = currentSelectedCat.getOptions()[curSelected].getDisplay();
@@ -174,12 +186,12 @@ class OptionsMenu extends MusicBeatState
 						}
 					else
 					{
-						if (FlxG.keys.justPressed.RIGHT)
+						if (controls.RIGHT_P)
 						{
 							currentSelectedCat.getOptions()[curSelected].right();
 							currentOptions[curSelected].text = currentSelectedCat.getOptions()[curSelected].getDisplay();
 						}
-						if (FlxG.keys.justPressed.LEFT)
+						if (controls.LEFT_P)
 						{
 							currentSelectedCat.getOptions()[curSelected].left();
 							currentOptions[curSelected].text = currentSelectedCat.getOptions()[curSelected].getDisplay();

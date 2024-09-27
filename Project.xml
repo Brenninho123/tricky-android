@@ -67,7 +67,7 @@
 	<assets path="assets/clown"    library="clown"    exclude="*.mp3" unless="web"/>
 
 	<assets path='art/readme.txt' rename='do NOT readme.txt' />
-	<!-- <template path='mods' /> -->
+	<assets path="mobile" rename="assets/mobile" if="mobile"/>
 	
 	<assets path="CHANGELOG.md" rename='changelog.txt'/>
 

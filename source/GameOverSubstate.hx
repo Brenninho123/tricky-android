@@ -41,6 +41,12 @@ class GameOverSubstate extends MusicBeatSubstate
 		FlxG.camera.follow(camFollow, LOCKON, 0.01);
 		
 		bf.playAnim('firstDeath');
+
+		#if mobile
+		addVirtualPad(NONE, A_B);
+		addVirtualPadCamera(false);
+		#end
+		
 		bf.animation.resume();
 	}
 

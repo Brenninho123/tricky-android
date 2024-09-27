@@ -176,6 +176,9 @@ class MusicMenu extends MusicBeatState
         
         add(indicator);
 
+        #if mobile
+		addVirtualPad(LEFT_RIGHT, A_B);
+		#end
 
 		for (i in theMen)
 			{
@@ -397,7 +400,7 @@ class MusicMenu extends MusicBeatState
 
         if (!selecting)
         {
-            if (FlxG.keys.justPressed.RIGHT)
+            if (controls.RIGHT_P)
 			{
 				if (selectedIndex + 1 < theMen.length)
 				{
@@ -414,7 +417,7 @@ class MusicMenu extends MusicBeatState
 					trace('selected ' + selectedIndex);
 				}
 			}
-			if (FlxG.keys.justPressed.LEFT)
+			if (controls.LEFT_P)
 			{
 				if (selectedIndex > 0)
 				{
@@ -432,12 +435,12 @@ class MusicMenu extends MusicBeatState
 				}
 			}
 
-            if (FlxG.keys.justPressed.ENTER)
+            if (controls.ACCEPT)
             {
                 theMen[selectedIndex].select();
             }
 
-            if (FlxG.keys.justPressed.ESCAPE)
+            if (controls.BACK)
                 FlxG.switchState(new MainMenuState());
         }
         else
