@@ -8,14 +8,8 @@ import flash.geom.Rectangle;
 import flixel.graphics.FlxGraphic;
 import flixel.graphics.frames.FlxAtlasFrames.TexturePackerObject;
 import flixel.graphics.frames.FlxFrame.FlxFrameAngle;
-import flixel.graphics.frames.FlxFramesCollection.FlxFrameCollectionType;
 import flixel.math.FlxPoint;
 import flixel.math.FlxRect;
-import flixel.system.FlxAssets.FlxGraphicAsset;
-import flixel.system.FlxAssets.FlxTexturePackerSource;
-import openfl.display.BitmapData;
-import flixel.graphics.FlxGraphic;
-import flixel.FlxSprite;
 import flixel.graphics.frames.FlxAtlasFrames;
 class CachedFrames
 {
@@ -105,7 +99,7 @@ class CachedFrames
     {
         sys.thread.Thread.create(() -> { // brooo n sei oq os devs tava na cabeça mandando o jogo pre carregar todos assets pesados de uma vez 💀🙏
             
-           /* toBeLoaded.set('sign','fourth/mech/Sign_Post_Mechanic');
+           /*toBeLoaded.set('sign','fourth/mech/Sign_Post_Mechanic');
             toBeLoaded.set('left','hellclwn/Tricky/Left');
             toBeLoaded.set('right','hellclwn/Tricky/right');
             toBeLoaded.set('up','hellclwn/Tricky/Up');
@@ -121,7 +115,6 @@ class CachedFrames
                 numba++;
                 progress = HelperFunctions.truncateFloat(numba / Lambda.count(toBeLoaded) * 100,2);
             }
-            trace('loaded everythin');
             loaded = true;
         });
     }
