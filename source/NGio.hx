@@ -1,5 +1,5 @@
 package;
-
+#if newgrounds
 import flixel.FlxG;
 import flixel.util.FlxSignal;
 import flixel.util.FlxTimer;
@@ -193,3 +193,4 @@ class NGio
 	//	}
 	}
 }
+#end
