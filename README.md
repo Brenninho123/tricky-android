@@ -1,4 +1,4 @@
-# Vs. Tricky (trickster, what ever)
+# Vs. Tricky Android (Tiky in Phone Real)
 
 ok ok so heres the build instructions.
 
