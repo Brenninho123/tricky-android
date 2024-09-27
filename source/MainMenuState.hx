@@ -657,7 +657,7 @@ class MainMenuState extends MusicBeatState
 		}
 		else
 		{
-			if (FlxG.keys.justPressed.ESCAPE)
+			if (controls.BACK)
 			{
 				selectingDiff = false;
 				listOfButtons[0].highlight();
