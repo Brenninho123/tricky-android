@@ -92,6 +92,6 @@ class FPS extends TextField
 		cacheCount = currentCount;
 	}
 	inline function get_memoryMegas():Float {
-		return cast(System.totalMemory, UInt);
+		return cast(openfl.system.System.totalMemory, UInt);
 	}
 }
