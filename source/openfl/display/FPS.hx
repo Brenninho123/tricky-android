@@ -79,7 +79,7 @@ class FPS extends TextField
 
 		if (currentCount != cacheCount /*&& visible*/)
 		{
-			text = "FPS: " + currentFPS + "n\Memory: " + flixel.util.FlxStringUtil.formatBytes(memoryMegas);
+			text = "FPS: " + currentFPS + "\nMemory: " + flixel.util.FlxStringUtil.formatBytes(memoryMegas);
 
 			#if (gl_stats && !disable_cffi && (!html5 || !canvas))
 			text += "\ntotalDC: " + Context3DStats.totalDrawCalls();
