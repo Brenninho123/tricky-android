@@ -7,6 +7,7 @@ import openfl.text.TextFormat;
 #if gl_stats
 import openfl.display._internal.stats.Context3DStats;
 import openfl.display._internal.stats.DrawCallContext;
+import openfl.system.System;
 #end
 #if flash
 import openfl.Lib;
