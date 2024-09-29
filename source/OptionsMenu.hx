@@ -23,7 +23,7 @@ class OptionsMenu extends MusicBeatState
 		new OptionCatagory("Gameplay", [
 			new DFJKOption(controls),
 			new GhostTapOption("Ghost Tapping is when you tap a direction and it doesn't give you a miss."),
-			new FPSCapOption("Cap your FPS (Left for -10, Right for +10. SHIFT to go faster)"),
+			new FPSCapOption("Cap your FPS (Left for -10, Right for +10.)"),
 			new ScrollSpeedOption("Change your scroll speed (Left for -0.1, right for +0.1. If it's at 1, it will be chart dependent)"),
 			new AccuracyDOption("Change how accuracy is calculated. (Accurate = Simple, Complex = Milisecond Based)"),
 		]),
@@ -98,7 +98,7 @@ class OptionsMenu extends MusicBeatState
 		add(menuShade);
 
 		#if mobile
-		addVirtualPad(UP_DOWN, A_B_C);
+		addVirtualPad(LEFT_FULL, A_B_C);
 		virtualPad.y = -24;
 		#end
 
