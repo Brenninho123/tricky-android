@@ -70,7 +70,7 @@ class Note extends FlxSprite
 		switch (daStage)
 		{
 			case 'school' | 'schoolEvil':
-				loadGraphic(Paths.image('weeb/pixelUI/arrows-pixels'), true, 17, 17);
+			/*	loadGraphic(Paths.image('weeb/pixelUI/arrows-pixels'), true, 17, 17);
 
 				animation.add('greenScroll', [6]);
 				animation.add('redScroll', [7]);
@@ -91,8 +91,7 @@ class Note extends FlxSprite
 					animation.add('redhold', [3]);
 					animation.add('bluehold', [1]);
 
-				}
-
+				}*/
 				if(burning){
 					
 					loadGraphic(Paths.image('NOTE_fire-pixel', "clown"), true, 21, 31);
