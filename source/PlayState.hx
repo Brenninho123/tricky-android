@@ -1549,7 +1549,6 @@ class PlayState extends MusicBeatState
 	function startSong():Void
 	{
 		trace('starting song :D');
-		Main.dumpCache();
 		startingSong = false;
 
 		previousFrameTime = FlxG.game.ticks;
