@@ -1,6 +1,5 @@
-#if sys
+#if desktop
 import sys.io.File;
-#end
 import Controls.Control;
 import flixel.FlxG;
 import openfl.events.IOErrorEvent;
@@ -99,3 +98,4 @@ class Replay
     }
 
 }
+#end

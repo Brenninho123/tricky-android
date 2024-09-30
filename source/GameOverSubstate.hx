@@ -66,7 +66,6 @@ class GameOverSubstate extends MusicBeatSubstate
 			FlxG.sound.music.stop();
 			MainMenuState.reRoll = true;
 			FlxG.switchState(new MainMenuState());
-			PlayState.loadRep = false;
 		}
 
 		if (bf.animation.curAnim.name == 'firstDeath' && bf.animation.curAnim.finished)

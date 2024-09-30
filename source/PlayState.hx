@@ -52,8 +52,6 @@ class PlayState extends MusicBeatState
 	public static var goods:Int = 0;
 	public static var sicks:Int = 0;
 
-	public static var rep:Replay;
-	public static var loadRep:Bool = false;
 
 	public static var staticVar:PlayState;
 		public static var currentSong = "noneYet";
@@ -126,7 +124,6 @@ class PlayState extends MusicBeatState
 	var talking:Bool = true;
 	var songScore:Int = 0;
 	var scoreTxt:FlxText;
-	var replayTxt:FlxText;
 
 	var gfDance:Bool = false;
 
@@ -589,14 +586,6 @@ class PlayState extends MusicBeatState
 			scoreTxt.x -= 75;
 		scoreTxt.y = healthBarBG.y + 50;
 		add(scoreTxt);
-
-		replayTxt = new FlxText(healthBarBG.x + healthBarBG.width / 2 - 75, healthBarBG.y + (FlxG.save.data.downscroll ? 100 : -100), 0, "REPLAY", 20);
-		replayTxt.setFormat(Paths.font("vcr.ttf"), 42, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
-		replayTxt.scrollFactor.set();
-		if (loadRep)
-			{
-				add(replayTxt);
-			}
 
 		iconP1 = new HealthIcon(SONG.player1, true);
 		iconP1.y = healthBar.y - (iconP1.height / 2);
@@ -2019,13 +2008,6 @@ class PlayState extends MusicBeatState
 
 		FlxG.watch.addQuick("beatShit", curBeat);
 		FlxG.watch.addQuick("stepShit", curStep);
-		if (loadRep) // rep debug
-			{
-				FlxG.watch.addQuick('rep rpesses',repPresses);
-				FlxG.watch.addQuick('rep releases',repReleases);
-				// FlxG.watch.addQuick('Queued',inputsQueued);
-			}
-
 		if (health <= 0)
 		{
 			boyfriend.stunned = true;
@@ -2875,19 +2857,6 @@ class PlayState extends MusicBeatState
 		
 					note.rating = Ratings.CalculateRating(noteDiff);
 		
-					/* if (loadRep)
-					{
-						if (controlArray[note.noteData])
-							goodNoteHit(note, false);
-						else if (rep.replay.keyPresses.length > repPresses && !controlArray[note.noteData])
-						{
-							if (NearlyEquals(note.strumTime,rep.replay.keyPresses[repPresses].time, 4))
-							{
-								goodNoteHit(note, false);
-							}
-						}
-					} */
-					
 					if (controlArray[note.noteData])
 					{
 						goodNoteHit(note, (mashing > getKeyPresses(note)));
