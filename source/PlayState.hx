@@ -148,6 +148,9 @@ class PlayState extends MusicBeatState
 
 	override public function create()
 	{
+		Paths.clearUnusedMemory();
+		Paths.clearStoredMemory();
+		
 		KeyBinds.keyCheck();
 
 		FlxG.sound.cache(Paths.inst(PlayState.SONG.song));
