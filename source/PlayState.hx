@@ -170,12 +170,6 @@ class PlayState extends MusicBeatState
 		var hole:FlxSprite = new FlxSprite(50,530).loadGraphic(Paths.image('fourth/Spawnhole_Ground_BACK','clown'));
 		var converHole:FlxSprite = new FlxSprite(7,578).loadGraphic(Paths.image('fourth/Spawnhole_Ground_COVER','clown'));
 
-		if (currentSong != SONG.songName)
-		{
-			currentSong = SONG.songName;
-			Main.dumpCache();
-		}
-
 		sicks = 0;
 		bads = 0;
 		shits = 0;
@@ -1555,6 +1549,7 @@ class PlayState extends MusicBeatState
 	function startSong():Void
 	{
 		trace('starting song :D');
+		Main.dumpCache();
 		startingSong = false;
 
 		previousFrameTime = FlxG.game.ticks;
@@ -2228,10 +2223,11 @@ class PlayState extends MusicBeatState
 
 	public function endSong():Void
 	{
+	 
 		#if mobile
 		mobileControls.visible = false;
 		#end
-		
+		Main.dumpCache();
 		var song = SONG.song;
 		canPause = false;
 		FlxG.sound.music.volume = 0;
