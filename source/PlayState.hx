@@ -2226,7 +2226,6 @@ class PlayState extends MusicBeatState
 		#if mobile
 		mobileControls.visible = false;
 		#end
-		Main.dumpCache();
 		var song = SONG.song;
 		canPause = false;
 		FlxG.sound.music.volume = 0;
