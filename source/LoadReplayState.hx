@@ -1,5 +1,5 @@
 package;
-
+#if desktop
 import Controls.KeyboardScheme;
 import Controls.Control;
 import flash.text.TextField;
@@ -199,3 +199,4 @@ class LoadReplayState extends MusicBeatState
 		}
 	}
 }
+#end
