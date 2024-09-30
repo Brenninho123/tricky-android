@@ -1,5 +1,6 @@
 package;
-
+import openfl.display.Bitmap;
+import lime.app.Application;
 import flixel.util.FlxColor;
 import flixel.FlxG;
 import flixel.FlxGame;
