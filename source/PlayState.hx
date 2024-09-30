@@ -56,6 +56,7 @@ class PlayState extends MusicBeatState
 	public static var loadRep:Bool = false;
 
 	public static var staticVar:PlayState;
+		public static var currentSong = "noneYet";
 
 	var halloweenLevel:Bool = false;
 
@@ -168,6 +169,12 @@ class PlayState extends MusicBeatState
 		var cover:FlxSprite = new FlxSprite(-180,755).loadGraphic(Paths.image('fourth/cover','clown'));
 		var hole:FlxSprite = new FlxSprite(50,530).loadGraphic(Paths.image('fourth/Spawnhole_Ground_BACK','clown'));
 		var converHole:FlxSprite = new FlxSprite(7,578).loadGraphic(Paths.image('fourth/Spawnhole_Ground_COVER','clown'));
+
+		if (currentSong != SONG.songName)
+		{
+			currentSong = SONG.songName;
+			Main.dumpCache();
+		}
 
 		sicks = 0;
 		bads = 0;
