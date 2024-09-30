@@ -422,7 +422,7 @@ class MainMenuState extends MusicBeatState
 	{
 		FlxG.mouse.visible = false;
 		#if mobile
-		MusicBeatState.removeVirtualPad();
+		MusicBeatState.instance.removeVirtualPad();
 		#end
 		PlayState.storyPlaylist = ['Improbable Outset', 'Madness', 'Hellclown'];
 		PlayState.isStoryMode = true;
