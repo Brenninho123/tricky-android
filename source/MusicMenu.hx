@@ -177,7 +177,7 @@ class MusicMenu extends MusicBeatState
         add(indicator);
 
     #if mobile
-		addVirtualPad(LEFT_FULL, A_B);
+		addVirtualPad(LEFT_RIGHT, A_B);
 		#end
 
 		for (i in theMen)
